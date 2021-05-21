@@ -1,0 +1,4 @@
+---
+# handlers file for webServer
+- name: restart web packages
+  service: name=httpd state=restarted

@@ -1,0 +1,16 @@
+---
+- name: apply common configuration to all hosts
+  hosts: all #references hosts.ini
+  remote_user: ec2-user
+  become: yes
+ 
+  roles:
+  - common
+
+- name: apply webserver role to the webServers group #let IACBOX be a webserver for this demo
+  hosts: webServers #references hosts.ini
+  remote_user: ec2-user
+  become: yes
+
+  roles:
+  - webServer

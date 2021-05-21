@@ -1,0 +1,8 @@
+---
+# tasks file for webServer
+- name: install apache
+  yum: name=httpd state=present
+  notify: restart web packages
+
+- name: start nginx
+  service: name=httpd state=started
