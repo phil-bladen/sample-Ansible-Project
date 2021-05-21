@@ -4,5 +4,5 @@
   yum: name=httpd state=present
   notify: restart web packages
 
-- name: start nginx
+- name: start apache
   service: name=httpd state=started
